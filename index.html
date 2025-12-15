@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доступ к Outline VPN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Доступ к Outline VPN</h1>
+    </header>
+
+    <main>
+        <section id="access-section" class="card">
+            <h2>Введите 6-значный код для получения ключа</h2>
+            <div class="input-group">
+                <input type="password" id="accessCode" maxlength="6" placeholder="******">
+                <button id="submitCode">Получить ключ</button>
+            </div>
+            <p id="errorMessage" class="error-message"></p>
+        </section>
+
+        <section id="key-section" class="card hidden">
+            <h2>Ваш ключ доступа Outline</h2>
+            <div class="key-display">
+                <p id="outlineKey"></p>
+                <button id="copyKey">Копировать ключ</button>
+            </div>
+            <p class="warning-message">Никому не сообщайте свой ключ!</p>
+        </section>
+
+        <section id="instructions-section" class="card">
+            <h2>Инструкции по установке и подключению</h2>
+            <div class="tabs">
+                <button class="tab-button active" data-platform="ios">iOS</button>
+                <button class="tab-button" data-platform="android">Android</button>
+            </div>
+
+            <div id="ios-instructions" class="instruction-content">
+                <h3>Для iOS:</h3>
+                <p>1. Скачайте приложение Outline из App Store.</p>
+                <p>
+                    <a href="https://apps.apple.com/app/outline-app/id1356177740" target="_blank" rel="noopener noreferrer">
+                        <img src="https://link-to-app-store-badge.png" alt="Скачать в App Store" class="app-store-badge">
+                    </a>
+                </p>
+                <p>2. Откройте приложение Outline.</p>
+                <p>
+                    <img src="images/ios_step1.png" alt="Скриншот iOS шаг 1" class="instruction-image">
+                </p>
+                <p>3. Нажмите "Добавить сервер" (Add Server) и вставьте ключ, скопированный с этой страницы.</p>
+                <p>
+                    <img src="images/ios_step2.png" alt="Скриншот iOS шаг 2" class="instruction-image">
+                </p>
+                <p>4. Нажмите "Подключиться" (Connect).</p>
+                <p>
+                    <img src="images/ios_step3.png" alt="Скриншот iOS шаг 3" class="instruction-image">
+                </p>
+                <p>Видео-инструкция:</p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_IOS_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div id="android-instructions" class="instruction-content hidden">
+                <h3>Для Android:</h3>
+                <p>1. Скачайте приложение Outline из Google Play.</p>
+                <p>
+                    <a href="https://play.google.com/store/apps/details?id=org.outline.android.client" target="_blank" rel="noopener noreferrer">
+                        <img src="https://link-to-google-play-badge.png" alt="Доступно в Google Play" class="google-play-badge">
+                    </a>
+                </p>
+                <p>2. Откройте приложение Outline.</p>
+                <p>
+                    <img src="images/android_step1.png" alt="Скриншот Android шаг 1" class="instruction-image">
+                </p>
+                <p>3. Нажмите "Добавить сервер" (Add Server) и вставьте ключ, скопированный с этой страницы.</p>
+                <p>
+                    <img src="images/android_step2.png" alt="Скриншот Android шаг 2" class="instruction-image">
+                </p>
+                <p>4. Нажмите "Подключиться" (Connect).</p>
+                <p>
+                    <img src="images/android_step3.png" alt="Скриншот Android шаг 3" class="instruction-image">
+                </p>
+                <p>Видео-инструкция:</p>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_ANDROID_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Outline VPN. Все права защищены.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
