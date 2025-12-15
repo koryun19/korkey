@@ -1,22 +1,24 @@
 :root {
-    --primary-color: #007bff; /* Основной синий */
-    --success-color: #28a745; /* Зеленый для успеха */
-    --warning-color: #ffc107; /* Желтый для предупреждений */
-    --error-color: #dc3545; /* Красный для ошибок */
-    --background-light: #f7f9fc; /* Светлый фон */
-    --text-dark: #343a40; /* Темный текст */
-    --card-bg: white;
-    --border-color: #e9ecef;
+    /* Цвета для Темной темы */
+    --primary-color: #007bff; /* Основной акцентный синий (как в Outline) */
+    --accent-color: #38c172; /* Зеленый для успеха/подключения */
+    --background-dark: #2c3e50; /* Темный фон (глубокий синий/серый) */
+    --card-bg: #34495e; /* Фон для карточек, чуть светлее основного */
+    --text-light: #ecf0f1; /* Светлый текст */
+    --border-dark: #3e5265; /* Темная рамка */
+    --error-color: #e74c3c; /* Красный для ошибок */
+    --warning-color: #f39c12; /* Желтый для предупреждений */
+    --glow-shadow: 0 0 10px rgba(0, 123, 255, 0.6); /* Эффект свечения */
 }
 
 /* Общие стили и фон */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: var(--background-light);
-    color: var(--text-dark);
+    background-color: var(--background-dark);
+    color: var(--text-light);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -24,11 +26,12 @@ body {
 
 /* Заголовок */
 header {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--card-bg); /* Используем цвет карточки для заголовка */
+    color: var(--text-light);
     padding: 1.5rem 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid var(--primary-color);
 }
 
 main {
@@ -44,9 +47,9 @@ main {
     background-color: var(--card-bg);
     padding: 35px;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Мягкая тень */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     margin-bottom: 30px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-dark);
 }
 
 h1, h2, h3 {
@@ -71,36 +74,40 @@ h2 {
 
 .input-group input[type="password"] {
     padding: 15px 20px;
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--border-dark);
     border-radius: 8px;
     font-size: 1.2rem;
     width: 150px;
     text-align: center;
-    transition: border-color 0.3s;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s, background-color 0.3s;
+    background-color: #49637c; /* Темное поле ввода */
+    color: var(--text-light);
 }
 
 .input-group input[type="password"]:focus {
     border-color: var(--primary-color);
     outline: none;
+    box-shadow: var(--glow-shadow);
 }
 
 /* Кнопки */
 .input-group button, .key-display button {
-    background-color: var(--success-color);
-    color: white;
+    background-color: var(--accent-color);
+    color: #2c3e50; /* Темный текст на светлой кнопке */
     border: none;
     padding: 15px 25px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.1rem;
-    font-weight: 600;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-weight: 700;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
 }
 
 .input-group button:hover, .key-display button:hover {
-    background-color: #218838;
+    background-color: #31b365; /* Чуть темнее при наведении */
     transform: translateY(-1px);
+    box-shadow: 0 0 15px rgba(56, 193, 114, 0.8); /* Зеленое свечение */
 }
 
 /* Сообщения */
@@ -111,7 +118,8 @@ h2 {
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
-    background-color: #f8d7da; /* Светло-красный фон */
+    background-color: #4a1c1c; /* Темно-красный фон */
+    border: 1px solid var(--error-color);
 }
 
 .warning-message {
@@ -123,13 +131,13 @@ h2 {
 
 /* Отображение ключа */
 .key-display {
-    background-color: #f0f8ff; /* Очень светлый синий */
+    background-color: #49637c; /* Темный фон для ключа */
     border: 2px solid var(--primary-color);
     padding: 20px;
     border-radius: 8px;
     text-align: center;
     word-break: break-all;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
 #outlineKey {
@@ -137,15 +145,17 @@ h2 {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 15px;
-    color: var(--text-dark);
+    color: #e0f7fa; /* Светлый, почти бирюзовый цвет для ключа */
 }
 
 .key-display button {
     background-color: var(--primary-color);
+    color: white;
     margin-top: 15px;
 }
 .key-display button:hover {
     background-color: #0056b3;
+    box-shadow: var(--glow-shadow); /* Синее свечение для кнопки копирования */
 }
 
 /* Вкладки для инструкций */
@@ -153,7 +163,7 @@ h2 {
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-dark);
     gap: 15px;
 }
 
@@ -163,7 +173,7 @@ h2 {
     padding: 12px 25px;
     cursor: pointer;
     font-size: 1.05rem;
-    color: #6c757d;
+    color: #95a5a6; /* Светло-серый для неактивной вкладки */
     transition: color 0.2s ease, border-bottom 0.2s ease;
     border-bottom: 3px solid transparent;
 }
@@ -197,19 +207,19 @@ h2 {
     height: auto;
     display: block;
     margin: 20px auto;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-dark);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .app-store-badge, .google-play-badge {
     height: 45px;
     display: block;
     margin: 15px auto;
+    filter: invert(1); /* Инвертируем значки для лучшего вида на темном фоне */
 }
 
 .video-container {
-    /* ... (оставляем настройки для видео) ... */
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
@@ -226,15 +236,17 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
+    border: none;
 }
 
 footer {
     text-align: center;
     padding: 25px 0;
     margin-top: 30px;
-    background-color: #e9ecef;
-    color: #6c757d;
+    background-color: #34495e; /* Цвет карточки */
+    color: #95a5a6;
     font-size: 0.9rem;
+    border-top: 1px solid var(--border-dark);
 }
 
 .hidden {
