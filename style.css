@@ -1,177 +1,223 @@
+:root {
+    --primary-color: #007bff; /* Основной синий */
+    --success-color: #28a745; /* Зеленый для успеха */
+    --warning-color: #ffc107; /* Желтый для предупреждений */
+    --error-color: #dc3545; /* Красный для ошибок */
+    --background-light: #f7f9fc; /* Светлый фон */
+    --text-dark: #343a40; /* Темный текст */
+    --card-bg: white;
+    --border-color: #e9ecef;
+}
+
+/* Общие стили и фон */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6;
-    color: #333;
+    background-color: var(--background-light);
+    color: var(--text-dark);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
+/* Заголовок */
 header {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
 }
 
 main {
     flex: 1;
     max-width: 900px;
-    margin: 20px auto;
+    margin: 30px auto;
     padding: 0 20px;
     width: 100%;
 }
 
+/* Карточки (основные секции) */
 .card {
-    background-color: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    margin-bottom: 25px;
+    background-color: var(--card-bg);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Мягкая тень */
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
 }
 
 h1, h2, h3 {
-    color: #007bff;
+    color: var(--primary-color);
     text-align: center;
     margin-top: 0;
+    font-weight: 600;
 }
 
 h2 {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
 }
 
+/* Поле ввода кода */
 .input-group {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     margin-bottom: 15px;
 }
 
 .input-group input[type="password"] {
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1.1rem;
+    padding: 15px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1.2rem;
     width: 150px;
     text-align: center;
+    transition: border-color 0.3s;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
+.input-group input[type="password"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Кнопки */
 .input-group button, .key-display button {
-    background-color: #28a745;
+    background-color: var(--success-color);
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
+    padding: 15px 25px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1.1rem;
-    transition: background-color 0.2s ease;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .input-group button:hover, .key-display button:hover {
     background-color: #218838;
+    transform: translateY(-1px);
 }
 
+/* Сообщения */
 .error-message {
-    color: #dc3545;
+    color: var(--error-color);
     text-align: center;
-    font-weight: bold;
-    margin-top: -10px;
+    font-weight: 600;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8d7da; /* Светло-красный фон */
 }
 
 .warning-message {
-    color: #ffc107;
+    color: var(--warning-color);
     text-align: center;
-    font-weight: bold;
-    margin-top: 15px;
+    font-weight: 600;
+    margin-top: 20px;
 }
 
+/* Отображение ключа */
 .key-display {
-    background-color: #e9ecef;
-    border: 1px dashed #007bff;
-    padding: 15px;
-    border-radius: 5px;
+    background-color: #f0f8ff; /* Очень светлый синий */
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
-    word-break: break-all; /* Для длинных ключей */
+    word-break: break-all;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 #outlineKey {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.1rem;
+    font-family: 'Monospace', 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 10px;
-    color: #333;
+    margin-bottom: 15px;
+    color: var(--text-dark);
 }
 
 .key-display button {
-    background-color: #007bff;
-    margin-top: 10px;
+    background-color: var(--primary-color);
+    margin-top: 15px;
 }
 .key-display button:hover {
     background-color: #0056b3;
 }
 
+/* Вкладки для инструкций */
 .tabs {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--border-color);
+    gap: 15px;
 }
 
 .tab-button {
     background-color: transparent;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: #6c757d;
     transition: color 0.2s ease, border-bottom 0.2s ease;
-    border-bottom: 2px solid transparent;
+    border-bottom: 3px solid transparent;
 }
 
 .tab-button.active {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
-    font-weight: bold;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    font-weight: 600;
 }
 
 .instruction-content {
     margin-top: 20px;
+    padding: 0 10px;
 }
 
 .instruction-content h3 {
     text-align: left;
-    color: #007bff;
+    color: var(--primary-color);
     margin-bottom: 15px;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
+}
+
+.instruction-content p {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
 }
 
 .instruction-image {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 15px auto;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin: 20px auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .app-store-badge, .google-play-badge {
-    height: 40px; /* Adjust size as needed */
+    height: 45px;
     display: block;
-    margin: 10px auto;
+    margin: 15px auto;
 }
 
 .video-container {
+    /* ... (оставляем настройки для видео) ... */
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     max-width: 100%;
     background: #000;
     margin-top: 20px;
+    border-radius: 8px;
 }
 
 .video-container iframe {
@@ -184,9 +230,9 @@ h2 {
 
 footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 25px 0;
     margin-top: 30px;
-    background-color: #f0f0f0;
+    background-color: #e9ecef;
     color: #6c757d;
     font-size: 0.9rem;
 }
@@ -195,12 +241,23 @@ footer {
     display: none;
 }
 
-/* Responsive adjustments */
+/* Адаптивность */
 @media (max-width: 600px) {
     .input-group {
         flex-direction: column;
+        gap: 8px;
     }
     .input-group input, .input-group button {
         width: 100%;
+    }
+    .card {
+        padding: 20px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .tab-button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
     }
 }
