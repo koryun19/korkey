@@ -1,0 +1,206 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 25px;
+}
+
+h1, h2, h3 {
+    color: #007bff;
+    text-align: center;
+    margin-top: 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.input-group input[type="password"] {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    width: 150px;
+    text-align: center;
+}
+
+.input-group button, .key-display button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.2s ease;
+}
+
+.input-group button:hover, .key-display button:hover {
+    background-color: #218838;
+}
+
+.error-message {
+    color: #dc3545;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+.warning-message {
+    color: #ffc107;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.key-display {
+    background-color: #e9ecef;
+    border: 1px dashed #007bff;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    word-break: break-all; /* Для длинных ключей */
+}
+
+#outlineKey {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.key-display button {
+    background-color: #007bff;
+    margin-top: 10px;
+}
+.key-display button:hover {
+    background-color: #0056b3;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #6c757d;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-button.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    font-weight: bold;
+}
+
+.instruction-content {
+    margin-top: 20px;
+}
+
+.instruction-content h3 {
+    text-align: left;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.instruction-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.app-store-badge, .google-play-badge {
+    height: 40px; /* Adjust size as needed */
+    display: block;
+    margin: 10px auto;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin-top: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    background-color: #f0f0f0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+    }
+    .input-group input, .input-group button {
+        width: 100%;
+    }
+}
